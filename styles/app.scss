@@ -1,8 +1,35 @@
 @import "~bootstrap/scss/bootstrap";
 
+$main-font: "Biennale Regular " !global;
+$main-height: 100% !global;
+
 @font-face {
-  font-family: "Biennale Regular";
+  font-family: $main-font;
   font-style: normal;
   font-weight: normal;
   src: url("../public/fonts/BiennaleRegular.otf") format("opentype");
 }
+
+html {
+  height: $main-height;
+  font-family: $main-font;
+}
+
+body {
+  height: $main-height;
+}
+
+#__next {
+  height: $main-height;
+  display: flex;
+  flex: 1 1 0%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  -webkit-box-pack: center;
+  -webkit-box-align: center;
+}
+
+
+@import "./login.scss";
