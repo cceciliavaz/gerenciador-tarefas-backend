@@ -1,29 +1,25 @@
 @import "~bootstrap/scss/bootstrap";
-
-$main-font: "Biennale Regular " !global;
-$main-height: 100% !global;
-$color-primary: #ed1164;
-$color-secondary: rgba(145, 163, 173, 0.15);
+@import "./config.scss";
 
 @font-face {
-  font-family: $main-font;
+  font-family: $mainFont;
   font-style: normal;
   font-weight: normal;
   src: url("../public/fonts/BiennaleRegular.otf") format("opentype");
 }
 
 html {
-  height: $main-height;
-  font-family: $main-font;
+  height: $mainHeight;
+  font-family: $mainFont;
 }
 
 body {
-  height: $main-height;
+  height: $mainHeight;
 }
 
 #__next {
-  height: $main-height;
-  // display: flex;
+  height: $mainHeight;
+  display: flex;
   flex: 1 1 0%;
   flex-direction: column;
   justify-content: center;
@@ -34,8 +30,8 @@ body {
 }
 
 
-.color-primary{
-  color: $color-primary;
+.colorPrimary{
+  color: $colorPrimary;
 }
 
 .bold{
@@ -44,6 +40,3 @@ body {
 
 
 @import "./login.scss";
-@import "./footer.scss";
-@import "./tasks.scss";
-@import "./header.scss";

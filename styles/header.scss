@@ -8,7 +8,7 @@
   right: 5%;
   text-align: right;
   letter-spacing: 0.01em;
-  color: $color-primary;
+  color: $colorPrimary;
 
   .logo {
     display: block;
@@ -22,7 +22,7 @@
 }
 
 .bar {
-  background: $color-secondary;
+  background: $colorSecondary;
   border-radius: 12px;
   padding: 0 16px;
 }
@@ -36,7 +36,7 @@
   font-weight: 600;
   font-size: 18px;
   line-height: 40px;
-  color: $color-primary;
+  color: $colorPrimary;
 }
 
 .container-tasks{

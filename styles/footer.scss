@@ -1,8 +1,8 @@
 .container-footer {
   .button-app {
     height: 48px;
-    background-color: $color-secondary;
-    color: $color-primary;
+    background-color: $colorSecondary;
+    color: $colorPrimary;
     border: none;
     font-size: 16px;
     margin-top: 12px;
@@ -14,6 +14,6 @@
   }
 
   .button-app:hover {
-    border: 2px solid $color-primary;
+    border: 2px solid $colorPrimary;
   }
 }

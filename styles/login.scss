@@ -1,9 +1,10 @@
-
 .container-login {
-  @media screen and (min-width: 992px) {
+  @media screen and (min-width: $mediaDesktop) {
     display: flex;
     flex-direction: row;
   }
+
+  
 
   .logo {
     display: block;
@@ -11,17 +12,28 @@
     width: 178.35px;
     margin-bottom: 47px;
 
-    @media screen and (min-width: 992px) {
-      width: 50%;
-      margin: 0 !important;
+    @media screen and (min-width: $mediaDesktop) {
+      width: 520px;
+      margin: auto;
     }
   }
 
   form {
-    @media screen and (min-width: 992px) {
-      padding: 14%;
+
+    p{
+      font-weight: bold;
+      color: $errorColor;
+      font-size: 14px;
+      line-height: 16px;
+
+    }
+
+    padding: 0 15px 0 15px;
+
+    @media screen and (min-width: $mediaDesktop) {
+      padding: 50px;
       margin-left: 30px;
-      border: 1px solid $color-primary;
+      border: 1px solid $colorPrimary;
       border-radius: 32px;
     }
   }
@@ -32,13 +44,8 @@
     padding: 10px;
 
     .password-icon {
-      left: 70.5%;
-      position: absolute;
-
-      @media screen and (min-width: 992px) {
-        left: 74%;
-        margin-top: 2px;
-      }
+      right: 15px;
+      position: relative;
     }
 
     img {
@@ -47,24 +54,49 @@
     }
 
     input {
-      color: $color-primary;
       font-weight: 400;
       font-size: 14px;
       line-height: 16px;
       border-width: 0px 0px 1px 0px;
       padding-bottom: 8px;
-      border-color: $color-primary;
+      border-bottom-color: $mediumGreyColor;
+      color: $darkGreyColor;
+      outline: none;
+
+      &:focus {
+        color: $colorPrimary;
+        border-bottom-color: $colorPrimary;
+      }
+
+      &::placeholder{
+        color: $mediumGreyColor;
+        opacity: 1;
+      }
+
+      &::-ms-input-placeholder{
+        color: $mediumGreyColor;
+      }
+
+      &:-ms-input-placeholder{
+        color: $mediumGreyColor;
+      }
     }
+
+    
   }
 
   button {
     width: 100%;
     height: 56px;
-    background: $color-primary;
+    background: $colorPrimary;
     border-radius: 12px;
     border: none;
-    color: white;
+    color: $lightGreyColor;
     font-size: 16px;
     margin-top: 12px;
   }
 }
+
+
+
+@import "./config.scss";
