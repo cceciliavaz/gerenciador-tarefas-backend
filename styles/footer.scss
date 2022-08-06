@@ -1,19 +1,53 @@
+@import './config.scss';
+
 .container-footer {
-  .button-app {
-    height: 48px;
-    background-color: $colorSecondary;
-    color: $colorPrimary;
-    border: none;
-    font-size: 16px;
-    margin-top: 12px;
-    border-radius: 12px;
-    position: fixed;
-    bottom: 5%;
-    right: 5%;
-    width: 90%;
+
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 10%;
+  border-top-width: 0px;
+
+  span {
+    display: none;
   }
 
-  .button-app:hover {
-    border: 2px solid $colorPrimary;
+  button {
+    display: flex;
+    flex-direction: row;
+    height: 50px;
+    background: $lightGreyColor;
+    border: 1px solid $colorPrimary;
+    border-radius: 12px;
+    color: $colorPrimary;
+    font-size: 16px;
+    margin-top: 12px;
+    width: 90%;
+    align-items: center;
+    padding-left: 15px;
+
+    img {
+      margin-right: 15px;
+    }
   }
+  
+  @media screen and (min-width: $mediaDesktop) {
+    height: 60px;
+    border-top: 1px solid $lightGreyColor;
+    
+    padding-bottom: 0px;
+
+    
+    span {
+      display: block;
+      color: $colorPrimary;
+      font-weight: bold;
+    }
+
+    button {
+      display: none;
+    }
+  }
+
 }

@@ -1,22 +1,51 @@
 /* eslint-disable @next/next/no-img-element */
+import { NextPage } from "next/types";
 import React, { MouseEvent, useState } from "react";
+import { executeRequest } from "../services/apiServices";
+import { setItem } from "../services/sessionCommand";
+import { AccessTokenProps } from "../types/AccessTokenPropos";
 
-export const Login = () => {
+export const Login:NextPage<AccessTokenProps> = ({setAcesstoken}) => {
   const [login, setLogin] = useState("");
   const [password, setPassword] = useState("");
 
   const [error, setError] = useState("");
 
-  const doLogin = (event: MouseEvent) => {
-    try {
-      if(!login || !password){
-        event.preventDefault();
-        return setError('Favor informar usuário e senha');
-      }
-      setError('Dados validados com sucesso');
+  const [loadRequest, setLoadRequest] = useState(false);
 
-    } catch (error) {
-      console.log("Error:" + error);
+  const doLogin = async (event: MouseEvent) => {
+    setError("");
+    setLoadRequest(false);
+
+    try {
+      if (!login || !password) {
+        event.preventDefault();
+        return setError("Favor informar usuário e senha");
+      }
+      const body = { login, password };
+
+      setLoadRequest(true);
+
+      const result = await executeRequest("login", "POST", body);
+
+      if (!result || !result.data) {
+        return setError("Ocorreu erro ao processar login, tente novamente!");
+      }
+
+      const {name, email, token} = result.data;
+
+      setItem('sessionUser',  {name, email, token})
+      
+      setLoadRequest(false);
+
+      setAcesstoken(token);
+
+    } catch (e: any) {
+      console.log("Error:" + e);
+      if (e?.response?.data.error) {
+        return setError(e?.response?.data.error);
+      }
+      setError("Ocorreu erro ao processar login, tente novamente!");
     }
   };
 
@@ -43,7 +72,10 @@ export const Login = () => {
             onChange={(event) => setPassword(event.target.value)}
           ></input>
         </div>
-        <button type="button" onClick={doLogin}> Login </button>
+        <button disabled={loadRequest} type="button" onClick={doLogin}>
+          {" "}
+          Login{" "}
+        </button>
       </form>
     </div>
   );

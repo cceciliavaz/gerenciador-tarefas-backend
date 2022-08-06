@@ -4,8 +4,6 @@
     flex-direction: row;
   }
 
-  
-
   .logo {
     display: block;
     margin: auto;
@@ -59,9 +57,11 @@
       line-height: 16px;
       border-width: 0px 0px 1px 0px;
       padding-bottom: 8px;
-      border-bottom-color: $mediumGreyColor;
+      border-bottom: 1px solid $mediumGreyColor;
       color: $darkGreyColor;
       outline: none;
+      
+      border-radius: 0px;
 
       &:focus {
         color: $colorPrimary;
@@ -94,6 +94,12 @@
     color: $lightGreyColor;
     font-size: 16px;
     margin-top: 12px;
+
+    &:disabled{
+      background: $lightGreyColor;
+      cursor: no-drop;
+      color: $darkGreyColor;
+    }
   }
 }
 
