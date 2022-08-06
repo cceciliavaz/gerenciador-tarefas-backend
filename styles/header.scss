@@ -1,0 +1,55 @@
+
+.container-header {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  position: fixed;
+  width: 90%;
+  right: 5%;
+  text-align: right;
+  letter-spacing: 0.01em;
+  color: $color-primary;
+
+  .logo {
+    display: block;
+    width: 86px;
+
+    @media screen and (min-width: 992px) {
+      width: 10%;
+      margin: 0 !important;
+    }
+  }
+}
+
+.bar {
+  background: $color-secondary;
+  border-radius: 12px;
+  padding: 0 16px;
+}
+
+
+
+
+.font-bar{
+  border-radius: 12px;
+  letter-spacing: 0.01em;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 40px;
+  color: $color-primary;
+}
+
+.container-tasks{
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 40px;
+  text-align: center;
+  letter-spacing: 0.01em;
+  color: #ED1164;
+  img{
+    width: 100%;    
+    position: relative;
+    margin-top: 50%;
+  }
+  
+}

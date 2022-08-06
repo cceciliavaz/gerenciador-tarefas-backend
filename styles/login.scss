@@ -1,4 +1,3 @@
-$color-primary: #ed1164;
 
 .container-login {
   @media screen and (min-width: 992px) {
@@ -7,17 +6,22 @@ $color-primary: #ed1164;
   }
 
   .logo {
-    width: 178.35px;
     display: block;
     margin: auto;
+    width: 178.35px;
     margin-bottom: 47px;
+
+    @media screen and (min-width: 992px) {
+      width: 50%;
+      margin: 0 !important;
+    }
   }
 
   form {
     @media screen and (min-width: 992px) {
-      padding-left: 14%;
-
-      border: 1px solid #ed1164;
+      padding: 14%;
+      margin-left: 30px;
+      border: 1px solid $color-primary;
       border-radius: 32px;
     }
   }
@@ -27,10 +31,21 @@ $color-primary: #ed1164;
     flex-direction: row;
     padding: 10px;
 
+    .password-icon {
+      left: 70.5%;
+      position: absolute;
+
+      @media screen and (min-width: 992px) {
+        left: 74%;
+        margin-top: 2px;
+      }
+    }
+
     img {
       width: 16px;
       margin-right: 18px;
     }
+
     input {
       color: $color-primary;
       font-weight: 400;

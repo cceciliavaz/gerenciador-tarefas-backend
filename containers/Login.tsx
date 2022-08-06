@@ -13,6 +13,7 @@ export const Login = () => {
         <div className="input">
           <img src="/lock.svg" alt="Informe a sua senha" />
           <input type="password" placeholder="Senha"></input>
+          <img src="/eye.svg" className="password-icon" alt="Exiba sua senha" />
         </div>
         <button> Login </button>
       </form>

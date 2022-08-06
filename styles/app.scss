@@ -2,6 +2,8 @@
 
 $main-font: "Biennale Regular " !global;
 $main-height: 100% !global;
+$color-primary: #ed1164;
+$color-secondary: rgba(145, 163, 173, 0.15);
 
 @font-face {
   font-family: $main-font;
@@ -21,7 +23,7 @@ body {
 
 #__next {
   height: $main-height;
-  display: flex;
+  // display: flex;
   flex: 1 1 0%;
   flex-direction: column;
   justify-content: center;
@@ -32,4 +34,16 @@ body {
 }
 
 
+.color-primary{
+  color: $color-primary;
+}
+
+.bold{
+  font-weight: 600;
+}
+
+
 @import "./login.scss";
+@import "./footer.scss";
+@import "./tasks.scss";
+@import "./header.scss";

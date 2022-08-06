@@ -1,0 +1,19 @@
+.container-footer {
+  .button-app {
+    height: 48px;
+    background-color: $color-secondary;
+    color: $color-primary;
+    border: none;
+    font-size: 16px;
+    margin-top: 12px;
+    border-radius: 12px;
+    position: fixed;
+    bottom: 5%;
+    right: 5%;
+    width: 90%;
+  }
+
+  .button-app:hover {
+    border: 2px solid $color-primary;
+  }
+}
